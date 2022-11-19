@@ -330,3 +330,76 @@ button{
   margin-right: 7px;
 }
 
+
+
+#Timer1 {
+  border: none;
+  color: #ff3d00;
+  font-size: 30px;
+}
+
+#Timer2 {
+  border: none;
+  color: #ff3d00;
+  font-size: 30px;
+}
+
+.timer {
+  background: -webkit-linear-gradient(left, #ff3d00 50%, #eee 50%);
+  /* Foreground color, Background colour */
+  border-radius: 100%;
+  height: 42px;
+  /* Height and width */
+  position: relative;
+  width: 42px;
+  /* Height and width */
+  animation-name: time;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.mask {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+ 
+  animation-name: mask;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* Animation time and number of steps (halved) */
+  -webkit-transform-origin: 100% 50%;
+}
+
+@-webkit-keyframes time {
+  100% {
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes mask {
+  0% {
+      background: #eee;
+      /* Background colour */
+      -webkit-transform: rotate(0deg);
+  }
+  50% {
+      background: #eee;
+      /* Background colour */
+      -webkit-transform: rotate(-180deg);
+  }
+  50.01% {
+      background: #ff3d00;
+      /* Foreground colour */
+      -webkit-transform: rotate(0deg);
+  }
+  100% {
+      background: #ff3d00;
+      /* Foreground colour */
+      -webkit-transform: rotate(-180deg);
+  }
+}
+
